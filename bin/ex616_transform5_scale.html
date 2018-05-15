@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>transform(변환)</title>
+
+<!-- 텍스트나 이미지를 회전이나 확대 등 다양한 기하학적인 모양으로 출력할 수 있다.
+	변환에서 사용되는 회전 각도의 단위는 deg 이며 시계방향으로 회전한다.
+	 -->
+<style>
+	div{
+		display : inline-block;
+		padding : 5px;
+		color : white;
+		background : olivedrab;
+		position : absolute;
+		left : 500px;
+	}
+		/*변환 */
+	
+	#scale{
+	/* 태그의 폭과 높이를 각각 배만큼 확대 : 가로 1배, 세로로 1배 만큼 확대 */
+		transform:scale(1,1);
+	}
+	
+	div#scale:hover{
+	
+	
+	}
+
+
+</style>	 
+</head>
+<body>
+	<h3>다양한 Transform</h3>
+	아래는 확대/축소(scale) 가 적용된사례이다
+	 또한 마우스를 올리면 추가적 변환이 일어난다.
+	<hr>
+	<br><br><br>
+	<div id = scale>scale(1,1)->scale(4,2)</div>
+
+</body>
+</html>

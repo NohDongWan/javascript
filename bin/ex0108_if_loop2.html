@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+caption:hover {
+	font-weight: bolder;
+}
+
+table {
+	margin: 0 auto;
+	text-align: center;
+}
+
+th:hover {
+	background-color: pink;
+	color: white
+}
+
+tr:nth-child(2n) {
+	background-color: yellowgreen;
+	color: white
+}
+
+tr:nth-child(3n) {
+	background-color: skyblue;
+	color: white
+}
+
+tr:nth-child(4n) {
+	background-color: lightgray;
+	color: white
+}
+</style>
+</head>
+<body>
+	<script>
+	var book1 = "자바스크립트";
+	var book2 = "HTML";
+	var book3 = "CSS";
+	
+	var list = "";
+	
+	list += "<table border = 1 width = 700px>";
+	list += "<caption> 베스트셀러 </caption>";
+	list += "<tbody>";
+	list += "<tr><th>순위</th><th>제목</th></tr>"
+	
+	var title;
+	var n = prompt("주문할 책 수량을 입력하세요",1);		 
+	for(var i = 0 ; i < n; i++){					//prompt 는 스트링형으로 들어오기때문에 n+1 하면 문자로인식되어 연결되어나온다
+		var book_list ="1." + book1 + "\n 2." + book2 +"\n 3." + book3;
+		var choice = prompt("책 제목을 번호로 선택하세요 ..\n" + book_list,"1");
+		
+		if(choice == "1")
+			title = book1;
+		else if(choice == "2")
+			title = book2;
+		else if(choice == "3")
+			title = book3;
+		else{
+		alert("리시트에 없는 책을 선택하셨습니다.");
+		title = "";
+		/* 리스트에 없는 책을 선택한 경우에는 제목의 td 가 빈 상태로 출력 */
+	}
+	list += "<tr>";
+	list += "<td>"+ (i+1) + "</td>";
+	list += "<td>"+ title + "</td>";
+	list += "</tr>";
+	
+	}
+	list += "</tbody></table>";
+	document.body.innerHTML = list;
+	</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+fieldset{
+margin: 0 auto;
+width : 500px;
+}
+form{
+	margin :0 auto;
+	width : 300px;
+	
+}
+label{
+float : left;
+color : pink;
+}
+
+legend{
+	margin: 0 auto;
+	color : red;
+	}
+
+input{
+	float : right;
+	border : 1px solid green;
+	text-align: center;}
+	
+</style>
+
+
+</head>
+<body>
+	<fieldset>
+	<legend>회원가입 폼</legend>
+	<form id = "my-form" action ="ex02020_문서 객체 제거.html">
+		
+		<label for = name >이름</label>
+		<input type = "text" name = name id = name ><br>
+		
+		<label for = "pass" >비밀번호</label>
+		<input type = "password" name = pass id = pass><br>
+		
+		<label for = "pass-check">비밀번호 확인</label>
+		<input type = "password" id = "pass-check"><br>
+		
+		<input type = "submit" value = "제출">
+	</form>
+	</fieldset>
+</body>
+</html>

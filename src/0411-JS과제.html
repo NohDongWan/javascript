@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	window.onclick = function() {
+
+		//input의 값을 alert으로 보여줍니다.
+		var texts = document.getElementById('username');
+		alert('input 값은 = ' + texts.value)
+		// prompt를 이용해서 이름을 입력받습니다.
+		var name = prompt("이름을 입력하세요","")
+		// 입력 받은 값을 input에 설정합니다.
+		texts.value = name;
+		//글자색 - 빨강색
+
+		texts.style.color = 'red';
+		//바탕색 - 노랑
+
+		texts.style.background = 'yellow';
+		//가로 - 200px
+		
+		texts.style.width = '200px';
+		
+		//세로 - 50px
+		texts.style.height = '50px';						//style 크기 정해줄때만 px 를 붙힌다.
+		//글자 크기 - 30px
+		texts.style.fontSize = '30px';
+
+	}
+</script>
+</head>
+<body>
+	이름 :
+	<input id="username" type="text" value="사용자의 이름 :F반" />
+</body>
+</html>

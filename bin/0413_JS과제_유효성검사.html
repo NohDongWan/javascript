@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	fieldset{
+	width : 800px;
+	height : 700px;
+	margin : 0 auto
+	}
+	form{
+	text-align : center;
+	width :400px;
+	height : 500px;
+	margin : 0 auto;
+	}
+	input{
+	border : 1px solid green;}
+	input[type="submit"]{
+	float : right;
+	}
+	input[type="button"]{
+	float : right;
+	}
+	label{
+	float : left
+	}
+
+</style>
+<script>
+	function check(){
+		var allinput = document.querySelectorAll("input");
+		for(var i = 0; i<allinput.length;i++){
+			if(allinput[i].value == ""){
+			alert("모든항목에 체크하세요");
+			allinput[i].value =="";
+			return false;
+			}
+		/* var hobby = document.getElementByName("hobby");
+		}
+				
+			
+		} */		
+	}
+		}
+	
+	//취미가 두개이하면 값을못넘어가기 false 해줘라
+	//취미
+	function idcheck(){
+		var id = document.getElementById('id')
+			if(id.value == ""){
+				alert ("아이디를 입력하세요");
+			}	
+			else{
+				var child = 
+					window.open('ex02020_문서 객체 제거.html',
+								'_blank',					//이름을지어줘야 블랭크가열린다 _blank 가 업으면 새창이 열림
+								'width = 300, height = 200,menubar=1,status=yes,resizable=yes, location = 1');
+			}
+	}
+	
+	function move(){
+		var jumin1 = document.getElementById('jumin1');
+		var jumin2 = document.getElementById('jumin2');
+	
+		
+		if(jumin1.length < 6){
+			alert("주민번호 앞자리를 입력하세요");
+		jumin1.focus();
+		}else
+		jumin2.focus();
+		if(jumin2.value < 7){
+			alert("주민번호 뒷자자리를 입력하세요")
+		jumin2.focus();
+		}
+				
+		
+	}
+	
+
+</script>
+</head>
+<body>
+	<fieldset>
+		<legend>유효성 검사</legend>
+		<form name=myform method=get action=send.jsp id=myform
+			onsubmit="return check()">
+
+			<label>ID</label> 
+			<input type=text size=20 name=id id=id >
+			<input type=button value="ID중복검사" onClick="idcheck()"><br> 
+			
+			 <label>비밀번호</label>
+			<input type=password name=pass id=pass><br> 
+			
+			<label>주민번호</label>
+			<input type=text size=6 maxlength=6 name=jumin1 id=jumin1 onClick ="move()"> 
+			<input type=text size=7 maxlength=7	name=jumin2 id=jumin2 onClick ="move()"><br> 
+			
+			<label>E-Mail</label><input
+				type=text name=email id=email>@<input type=text name=domain
+				id=domain> <select name=sel id=sel *******="domain1()">
+				<option value="">직접입력</option>
+				<option value="naver.com">naver.com</option>
+				<option value="daum.net">daum.net</option>
+				<option value="nate.com">nate.com</option>
+				<option value="gmail.com">gmail.com</option>
+				
+				
+			</select><br> <label>성별</label> 
+				<input type=radio name=gender value=m id=gender1>남자 
+				<input type=radio name=gender value=f id=gender2>여자 
+				
+				<label>취미</label><br> 
+				<input type=checkbox name=hobby id=hobby1 value="공부">공부 
+				<input type=checkbox name=hobby id=hobby3 value="운동">게임
+				<input type=checkbox name=hobby id=hobby4 value="등산">운동
+				<input type=checkbox name=hobby id=hobby5 value="낚시">등산<br>
+				
+				
+				<label>우편번호</label>
+				<input type=text size=3 maxlength=3 name=post1 id=post1> - 
+                <input type=text size=3 maxlength=3 name=post2 id=post2>
+                <input type=button value="우편검색" *******="post()"><br>
+                
+                
+                <label>주소</label>
+                <input type=text size=50 name=address id=address>
+                
+                
+                <label>자기소개</label>
+                <textarea rows=10 cols=75 name=intro id=intro>
+                
+                </textarea><br>
+                
+                 <input type=submit value="회원가입">
+    				<input type=reset value="취소">
+				
+		</form>
+	</fieldset>
+</body>
+</html>

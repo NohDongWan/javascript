@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+table {
+	margin: 0 auto
+}
+
+th {
+	background-color: black;
+	color: white
+}
+
+th:hover {
+	background-color: pink
+}
+</style>
+</head>
+<body>
+	<script>
+		var book = {
+			title : "채식주의자",
+			publisher : "창비",
+			author : "한강",
+			price : 25000
+		};
+		book.info = {
+			pages : 442,
+			date : "2010년 1월 30일",
+			ISBN10 : 8970506470,
+			size : "188mm*254mm"
+		};
+
+		var list = "";
+		list += "<table border = 1>"
+		list += "<tr><th>항목 (속성:property)</th><th>내용 (값:value)</th></tr>"
+
+		for ( var p in book) {
+			if (p == "info") {
+				for ( var i in book.info) {
+					list += "<tr><td>book.info." + i + "</td><td>"
+							+ book.info[i] + "</td></tr>"
+				}
+			} else if (p == "price")
+				list += "<tr><td>book." + p + "</td><td>" + book[p]
+						+ "원</td></tr>"
+
+			else {
+				list += "<tr><td>book." + p + "</td><td>" + book[p]
+						+ "</td></tr>"
+			}
+		}
+		list += "</table>"
+		document.body.innerHTML += list;
+
+		/* 	list += "<tr><td>book.title</td><td>"+book.title+"</td></tr>"
+			list += "<tr><td>book.publisher</td><td>"+book.publisher+"</td></tr>"
+			list += "<tr><td>book.title</td><td>"+book.author+"</td></tr>"
+			list += "<tr><td>book.price</td><td>"+book.price+"</td></tr>" */
+
+		/* 	list += "<tr><td>book.info.pages</td><td>"+book.info.pages+"</td></tr>"
+			list += "<tr><td>book.info.date</td><td>"+book.info.date+"</td></tr>"
+			list += "<tr><td>book.info.ISBN10</td><td>"+book.info.ISBN10+"</td></tr>"
+			list += "<tr><td>book.info.size</td><td>"+book.info.size+"</td></tr>" */
+	</script>
+</body>
+</html>

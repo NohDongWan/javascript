@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!--  문서 객체의 스타일 조작  -->
+<style>
+#after {
+	border: 2px solid black;
+	color: orange;
+	font-family: helvetica;
+	background-color: red;
+}
+</style>
+</head>
+<body>
+	<h1 id="header">Header</h1>
+	<script>
+		var h = document.getElementById("header");
+		function change() {
+			//속성 설정합니다 . id = "after"
+			h.setAttribute("id", "after"); //id 를 after 로 바꿔줘라
+		}
+		h.onclick = change;
+	</script>
+</body>
+</html>

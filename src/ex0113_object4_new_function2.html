@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+table {
+	margin: 0 auto
+}
+</style>
+</head>
+<body>
+	<script>
+		var saram = new Object();//사용자 정의 객체 생성
+
+		//생성된 객체에 속성 추가하기
+		saram.name = "나최고";
+		saram.age = 25;
+		saram.ki = 170.2;
+		saram.blood = "A";
+		saram.address = "서울시 강남구";
+
+		saram.print = function() {
+			var list = ""
+			list += "<table border = 1>"
+			list += "<tr>"
+			list += "<th>항목(속성 : property)</th>"
+			list += "<th>내용(값:values)</th>"
+			list += "</tr>"
+			for ( var p in saram) {
+				var chuga = ""
+				if (p != "print") {
+					switch (p) {
+					case "age":
+						chuga = "세"
+						break;
+					case "ki":
+						chuga = "cm"
+						break;
+
+					case "blood":
+						chuga = "형"
+						break;
+					}
+					list += "<tr><td>saram." + p + "</td><td>" + saram[p]
+							+ chuga + "</td></tr>"
+				}
+			}
+			list += "</table>"
+			document.body.innerHTML += list;
+
+		}
+		saram.print();
+
+		saram.add = (function() {
+			var counter = 0;
+			return function() {
+				return ++counter;
+			}
+		})();
+
+		var result = saram.add();
+		document.write(result + "<br>");
+		var result = saram.add();
+		document.write(result + "<br>");
+		var result = saram.add();
+		document.write(result + "<br>");
+		var result = saram.add();
+		document.write(result + "<br>");
+	</script>
+
+</body>
+</html>

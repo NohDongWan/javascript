@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<script>
+	window.onclick = function() {
+		var header1 = document.getElementById('header');
+		
+		header1.style.border = "3px solid black";
+		header1.style.color = "orange"
+		header1.style.fontFamily = '굴림';
+//		header1.style.background = "red"
+		/*  
+		CSS 에서 background-color 은 하이픈(-) 없애고
+		끊겨진 단어의 첫 글자를 대문자로 변경하면 됩니다.
+		예) background-color -> backgroundColor
+		*/
+		
+		//header1.style.backgroundColor = 'red';				//javascript 에서 의 사용
+		header1.style['background-color'] = 'blue' ;			//css 처럼 사용
+		/*
+		CSS 에 서와 같이 사용할 경우는 [] 를 사용
+		header1.style['border'] = '2px solid black';
+		header1.style['color'] = 'orange';
+		
+		
+		*/
+
+	
+	}
+	</script>
+</head>
+<body>
+
+	<h1 id="header">Header</h1>
+</body>
+</html>

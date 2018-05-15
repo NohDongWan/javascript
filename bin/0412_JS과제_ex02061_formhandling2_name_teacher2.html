@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Form handling with JavaScript</title>
+
+<!--  
+ㅁ8★★★★ㅁ8ㅁ8★★★★★★ㅁ8★★★★★★★★ㅁ8★★ㅁ8	중요하다!★★★★★ㅁ8★★★★★★★★ㅁㅁ8ㅁ8★ㅁ8ㅁ88★★★★★★★★★★ㅁ88★ㅁ8ㅁ88★★★
+		문서 객체 가져오기(2)
+	-getElementsByName(namevalue)
+	태그의 name 속성이 namevalue 와 일치하는 문서 객체를 배열로 가져옵니다.
+	
+	-getElementsByTagName(tagName)
+	태그 이름이 tagName 과 일치하는 모든 태그의 문서 객체를 배열로 가져옵니다.
+	
+	-getElementsByClassName(className)
+	클래스 속성이 calssName 과 일치하는 문서 객체를 배열로 가져옵니다.
+-->
+
+<link href="ex02061.css" rel="stylesheet" type="text/css">
+<script>
+		function updateAll() {
+			var n1 = document.form01.book1.value;			
+			var n2 = document.form01.book2.value;		
+			var n3 = document.form01.book3.value;		
+	
+			
+			var prices = document.getElementsByClassName('price');
+			
+			
+			var price = [0,0,0];
+			for(var i = 0 ; i < prices.length; i++){
+				price[i] = prices[i].innerHTML.replace(",","");			//제거해야되는것들은 리플레이스를 많이 이용한다.
+				price[i] = price[i].replace("원","");			//근데 자바스크립트는 replaceAll 이안된다 자바는 된다
+			}
+				
+				/*
+				위 두문장과 같은 의미의 패턴사용 //JAVA에서 replaceALL 과 같은 의미
+				1. / /
+				2. ,|원 => , 또는 원
+				3. g: 모든영역 , i : 대소문자 구분없이
+				price[i] = prices[i].innerHTML.replace(/,|원/g,"")			///뒤에 넣어야된다. 해석하면 / 뒤에 ","  또는 /뒤에 "원" 을 지워줘라 g를 붙이고 , 뒤에 바꿀 문자 ""  
+				
+				*/
+				
+			var hap1 =n1 * price[0];
+			var hap2 =n2 * price[1];
+			var hap3 =n3 * price[2];
+			document.form01.book1Total.value = hap1 
+			document.form01.book2Total.value = hap2 
+			document.form01.book3Total.value = hap3 
+
+			var totalNumber = parseInt(n1) + parseInt(n2) + parseInt(n3);
+			document.form01.totalNumber.value = totalNumber;
+			var totalPrice = hap1 + hap2 + hap3;
+			document.form01.totalPrice.value = totalPrice;
+			
+			
+			
+		
+		}
+	</script>
+
+</head>
+<body>
+	<h2>서적 주문 양식</h2>
+	<form name="form01" action="ex0201_domtree.html" method="get"
+		oninput="updateAll();">
+		<!--updateAll(); 은 입력할 때마다 변경됩니다  -->
+		<table border="1">
+			<tr>
+				<th>책 제목</th>
+				<th>가격</th>
+				<th>수량</th>
+				<th>합계</th>
+			</tr>
+			<tr>
+				<td>4차 산업</td>
+				<td class='price'>25,000원</td>
+				<td><input name="book1" type="text" size="2" value="0"
+					onclick="this.select();"></td>
+				<!-- 이벤트 핸들러를 직접 기술하여 등록방식
+					     this.select()는 각 서적 수량을 표시하는 텍스트 박스를 클릭하면 그 값이 선택되도록 하는 기능을 갖는다.
+					     this는 <input>요소의 DOM을 가리키게 된다. 즉, 자신이 속한 DOM을 가리키는 것이다.-->
+				<td><input name="book1Total" type="text" size="6" value="0">
+					원</td>
+			</tr>
+			<tr>
+				<td>다이어트</td>
+				<td class='price'>27,000원</td>
+				<td><input name="book2" type="text" size="2" value="0"
+					onclick="this.select();"></td>
+				<td><input name="book2Total" type="text" size="6" value="0">
+					원</td>
+			</tr>
+			<tr>
+				<td>윤식당</td>
+				<td class='price'>25,000원</td>
+				<td><input name="book3" type="text" size="2" value="0"
+					onclick="this.select();"></td>
+				<td><input name="book3Total" type="text" size="6" value="0">
+					원</td>
+			</tr>
+			<tr>
+				<td>합계</td>
+				<td>&nbsp;</td>
+				<td><input name="totalNumber" type="text" size="2" value="0"></td>
+				<td><input name="totalPrice" type="text" size="6" value="0">
+					원</td>
+			</tr>
+		</table>
+		<br> <input type="button" value="합계계산" onclick="updateAll();">
+		<!-- 이벤트 핸들러 함수를 호출하는 방식 -->
+		<input type="reset" value="초기화"> <input type="submit"
+			value="제출">
+	</form>
+
+
+</body>
+</html>

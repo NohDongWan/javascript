@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script>
+		var jumin = prompt("주민번호를 입력하세요?", "123456-1234567");
+
+		var test = jumin.substr(7, 1);
+		if (test == 1 || test ==3)
+			document.body.style.background = "blue"
+		else if(test == 2 || test ==4)
+			document.body.style.background = "pink"
+	</script>
+
+</body>
+</html>

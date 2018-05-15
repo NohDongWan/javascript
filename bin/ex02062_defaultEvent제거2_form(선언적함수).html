@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+form{
+	margin : 0 auto;
+	width : 300px;}
+fieldset {
+	margin: 0 auto;
+	border-radius: 3px;
+	border: 5px solid green;
+	height: 23px;
+	width: 500px;
+	height: 150px;
+	margin-bottom: 5px
+}
+input:focus {
+	outline: none;
+	border: 1px dotted green;
+}
+
+label {
+	color: purple;
+	float: left
+}
+
+input[type="submit"] {
+	background: green;
+	height: 30px;
+	display: inline-block;
+	margin-left: 39%;
+	width : 170px;
+	
+}
+
+input[type="submit"]:hover {
+	opacity: 0.8;
+
+	
+}
+input{float : right;}
+</style>
+
+
+
+<!-- 
+	디폴트 이벤트 : 일부 HTML 태그는 이미 이벤트 리스너가 있습니다.
+				이러한 것을 디폴트 이벤트라고 합니다.
+	예를 들어 a 태그는 클릭하면 다른 페이지로 이동하는데 이것이
+	a 태그가 가진 디폴트 이벤트 입니다.
+	또한 입력 양식의 submit 버튼을 누르면 자동으로 입력 양식을 제출하고 페이지를 
+	새로 고침 하는것이 디폴트 이벤트입니다.
+	
+	디폴트 이벤트 제거하는 방법
+	1. obj.onsubmit = function(){
+			
+				......
+				return false;	
+			}
+	
+	2. event.preventDefault() 를 사용하는 경우
+		<a href = "http://www.naver.com"
+			onclick = "event.preventDefault()">
+			
+	3. function whenSubmit(){
+			
+			...
+			return false;
+	
+	}
+	<form onsubmit = "return whenSubmit()">
+ -->
+
+<script>
+	function whenSubmit() {
+		var value1 = document.getElementById("name");
+		var value2 = document.getElementById("pass");
+		var value3 = document.getElementById("pass-check");
+
+		if (value1.value == '' || value1.value.length < 2) {
+			alert("이름을 입력하세요");
+			value1.value = ""
+			value1.focus();
+			return false;
+		} else if (value2.value == '' || value2.value.length < 8) {
+			alert("8자리 이상 비밀번호를 입력하세요");
+			value2.focus();
+			return false;
+		} else if (value3.value == '' || value3.value.length < 8) {
+			alert("비밀번호확인을 입력하세요.");
+			value3.focus();
+			return false;
+		} else if (value2.value != value3.value) {
+			alert("비밀번호 확인값이 다릅니다.")
+			value2.value = ""
+			value3.value = ""
+			value2.focus();
+			return false;
+		}
+	}
+</script>
+</head>
+<body>
+	<fieldset>
+		<legend>회원가입 폼</legend>
+		<form onsubmit="return whenSubmit()" action="ex02020_문서 객체 제거.html">
+
+			<label for=name>이름</label> <input type="text" name=name id=name><br>
+
+			<label for="pass">비밀번호</label> <input type="password" name=pass
+				id=pass><br> <label for="pass-check">비밀번호 확인</label> <input
+				type="password" id="pass-check"><br> <input
+				type="submit" value="제출">
+		</form>
+	</fieldset>
+</body>
+</html>

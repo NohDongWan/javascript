@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+caption:hover {
+	font-weight: bolder;
+}
+
+table {
+	margin: 0 auto;
+	text-align: center;
+}
+
+th:hover {
+	background-color: pink;
+	color: white
+}
+
+tr:nth-child(2n) {
+	background-color: yellowgreen;
+	color: white
+}
+
+tr:nth-child(3n) {
+	background-color: skyblue;
+	color: white
+}
+
+tr:nth-child(4n) {
+	background-color: lightgray;
+	color: white
+}
+</style>
+</head>
+<body>
+	<script>
+		var booknum = prompt("주문할 책 수량을 입력하세요?", "1");
+		var book1 = "자바스크립트";
+		var book2 = "HTML";
+		var book3 = "CSS";
+
+		var list = '';
+		list += "<table border = 1 width = 700px>";
+		list += "<caption> 베스트셀러 </caption>";
+		list += "<tbody>";
+		list += "<tr><th>순위</th><th>제목</th></tr>"
+
+		if (booknum) {
+			if (booknum >= 4) {
+				alert('3이하의 숫자를 입력하세요');
+			} else {
+				{
+					for (var i = 1; i <= booknum; i++) {
+						var bookorder = prompt('책 제목을 번호로 선택하세요...\n1.' + book1
+								+ "\n2." + book2 + "\n3." + book3);
+						if (bookorder == 1) {
+							bookorder = book1;
+						} else if (bookorder == 2)
+							bookorder = book2;
+						else if (bookorder == 3)
+							bookorder = book3;
+
+						list += "<tr><td>" + i + "</td><td>" + bookorder
+								+ "</td></tr>";
+					}
+				}
+			}
+		}
+
+		list += "</tbody>";
+		list += "</table>";
+
+		document.body.innerHTML += list;
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!--  -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#sun{
+		color : red;
+	}
+	#blue{
+	display : inline;
+	color : blue;}
+
+
+</style>
+</head>
+<body>
+	<script>
+		var today = new Date(2018, 3, 8, 15, 15, 15);
+		
+		var y4 = today.getFullYear();
+		var m = today.getMonth() + 1;
+		var d = today.getDate();
+		var yoil = today.getDay();
+		var hour = today.getHours();
+		var min = today.getMinutes();
+		var sec = today.getSeconds();
+		
+		
+	
+
+		
+		switch (yoil){
+		case 1:
+			yoil = "월요일";
+			break;
+		case 2:
+			yoil = "화요일";
+			break;
+		case 3:
+			yoil = "수요일";
+			break;
+		case 4:
+			yoil = "목요일";
+			break;
+		case 5:
+			yoil = "금요일";
+			break;
+		case 6:
+			yoil = "토요일";
+			break;
+		case 0:
+			yoil = "일요일";
+			break;
+		}
+		document.write("오늘 날짜 : " + y4 + "년" + m + "월" + d + "일" +"<span id = sun>"+ yoil+ "</span>");
+		document.write("<br>현재 시간 : " + hour + "시" + min + "분" + sec + "초");
+	
+		
+	var today2 = new Date(2018, 3, 7, 15, 15, 15);
+		
+		var y4 = today2.getFullYear();
+		var m = today2.getMonth() + 1;
+		var d = today2.getDate();
+		var yoil = today2.getDay();
+		var hour = today2.getHours();
+		var min = today2.getMinutes();
+		var sec = today2.getSeconds();
+			switch (yoil){
+		case 1:
+			yoil = "월요일";
+			break;
+		case 2:
+			yoil = "화요일";
+			break;
+		case 3:
+			yoil = "수요일";
+			break;
+		case 4:
+			yoil = "목요일";
+			break;
+		case 5:
+			yoil = "금요일";
+			break;
+		case 6:
+			yoil = "토요일";
+			break;
+	
+		}
+		
+		document.write("<br>오늘 날짜 : " + y4 + "년" + m + "월" + d + "일" + "<span id = blue>"+yoil+"</span>");
+		document.write("<br>현재 시간 : " + hour + "시" + min + "분" + sec + "초");
+
+	
+	</script>
+
+</body>
+</html>

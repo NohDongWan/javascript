@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script>
+		/*  
+		 Date 객체
+		 - 컴퓨터에서 제공되는 날짜와 시간을 알아내거나 설정하기 위한 객체
+		 - 메서드의 종류
+		
+		 getFullYear() - 연도 (yyyy)
+		 getMonth() - 월(0:1월 ~ 11:12월)
+		 getDate() - 일
+		 getDay() - 요일(0:일요일 ~ 6:토요일)
+		 getHours() - 시간
+		 getMinutes() - 분
+		 getSeconds() - 초
+		 getTime() - 1970년 1월 1일 부터 경과된 시간을 밀리초로 구함
+		 getMilliseconds() -밀리초(1/1000초) 를 리턴
+		 toLocaleString() - 객체의 시간 정보를 local 표현의 문자열로 리턴
+		
+		 예) var today = new Date();  
+		 */
+		//시스템의 현재 날짜로 초기화된 Date 객체를 생성합니다.
+		/* var nowHour = new getHours();
+		var nowMin = new getMinutes();
+		var nowSec = new getSeconds();
+ */
+ 	
+		var today = new Date(2018,3,8,10,10,10);
+	var y4 = today.getFullYear();
+	var m = today.getMonth() + 1;
+	var d = today.getDate(); 
+	var yoil = today.getDay();
+ 
+ 	document.write("오늘날짜 : " + y4 + "년" + m + "월" + d + "일" + "<br>");
+	document.write("현재 시간 : " + today.getHours() + "시" + today.getMinutes()+"분" + today.getSeconds() + "초" )
+		if(today.getHours()>= 12)
+			document.body.style.background='orange';			//배경색 주는방법
+		else
+			document.body.style.background='yellow';
+		
+		
+	</script>
+</body>
+</html>

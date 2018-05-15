@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!--  문서 객체의 스타일 조작  -->
+<!--  
+ㅁ8★★★★ㅁ8ㅁ8★★★★★★ㅁ8★★★★★★★★ㅁ8★★ㅁ8	중요하다!★★★★★ㅁ8★★★★★★★★ㅁㅁ8ㅁ8★ㅁ8ㅁ88★★★★★★★★★★ㅁ88★ㅁ8ㅁ88★★★
+		문서 객체 가져오기(2)
+	-getElementsByName(namevalue)
+	태그의 name 속성이 namevalue 와 일치하는 문서 객체를 배열로 가져옵니다.
+	
+	-getElementsByTagName(tagName)
+	태그 이름이 tagName 과 일치하는 모든 태그의 문서 객체를 배열로 가져옵니다.
+	
+	-getElementsByClassName(className)
+	클래스 속성이 calssName 과 일치하는 문서 객체를 배열로 가져옵니다.
+-->
+
+<style>
+#after {
+	border: 2px solid black;
+	color: white;
+	font-family: helvetica;
+	background-color: blue;
+}
+</style>
+</head>
+<body>
+	<h1 class="header">Header</h1>
+	<script>
+		var h = document.getElementsByClassName("header");
+		function change() {
+			//속성 설정합니다 . id = "after"
+			h[0].setAttribute("id", "after"); //★아이디가 없으면 id 를 만들어서 after 로 설정해줘라
+		}
+		h[0].onclick = change;
+	</script>
+</body>
+</html>

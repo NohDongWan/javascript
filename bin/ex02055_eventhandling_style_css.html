@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+
+	<style>
+		#op1{
+			color : black;
+			background-color : skyblue;
+			border : 2px solid yellow
+		}
+		#op2{
+			color : black;
+			background-color : yellow;
+			border : 2px solid skyblue
+		}
+		#result{
+		color : white;
+		background-color : yellowgreen;
+		border : 2px solid yellow}
+	</style>
+
+
+</head>
+<body>
+<script>
+			function add(){
+				var su1 = document.getElementById("op1");
+				var su2 = document.getElementById("op2");
+				var result = document.getElementById("result");
+				result.value = Number(su1.value) + Number(su2.value);
+				
+			}
+
+</script>
+
+
+	<form>
+			<input id = "op1" type = text size = 2> + 
+			<input id = "op2" type = text size = 2>
+			<input type = button value =  " = " onclick = "add();">
+			<input id = "result" type = "text" size = "2" >
+	</form>
+</body>
+</html>

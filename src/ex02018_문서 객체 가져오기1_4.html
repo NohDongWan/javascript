@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+
+<body>
+	꽃으로 바꾸어 주세요
+	<br>
+	<img src="Koala.jpg" id="flower">
+	<!-- 여기는 onclick(); 가 없다  -->
+</body>
+<script>
+	//oinclick 를 자바스크립트에서 실행하는법★★★★★ㅁ8
+		var changeflower = document.getElementById("flower");
+		function changeflowerf() {
+			changeflower.src = "Desert.jpg";
+			changeflower.width = 500;
+			changeflower.height = 500;
+		};
+		
+		//이벤트 속성에 이벤트 핸들러 함수 등록
+		//이벤트 등록시 이벤트 핸들러 함수의 이름만 적고 ()는 붙이지 않는다.
+		changeflower.onclick = changeflowerf;
+		//oinclick 를 자바스크립트에서 실행하는법★★★★★ㅁ8
+
+
+</script>
+</html>

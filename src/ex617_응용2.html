@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style>
+	
+	div{
+		position : relative;
+		margin : 0 auto;
+		width : 100px;
+		height : 70px;	
+		top : 100px;
+	}
+		div>div{
+			background-color : black;
+			width : 100px;
+			height : 10px;
+		}
+		.bar1{
+		position: absolute;
+		top : 10px;
+		}
+		.bar2{
+		position: absolute;
+		top: 40px
+		}
+		.bar3{
+		position: absolute;
+		top : 70px
+		}
+	
+		.container:hover>.bar1{
+			
+			transition : 2s;
+			transform : rotate(45deg);
+			position: absolute;
+			top : 40px
+		}
+		.container:hover>.bar2{
+			display : none;
+		}
+		
+		.container:hover>.bar3{
+			transition : 2s;
+			transform : rotate(-45deg);
+			position: absolute;
+			top : 40px;
+		}
+	</style>
+</head>
+<body>
+	
+	<div class = container>
+		<div class = bar1></div>
+		<div class = bar2></div>
+		<div class = bar3></div>	
+	</div>
+</body>
+</html>
